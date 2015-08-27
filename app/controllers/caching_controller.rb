@@ -22,7 +22,7 @@ class CachingController < ApplicationController
 
   def sin(x)
     # Maclaurin series expansion of sin(x) http://en.wikipedia.org/wiki/Taylor_series
-    r = Rails.cache.read('sin?' + x.to_s)
+    r = Rails.cache.read('sin?' + x.to_s) 
     return r if r
     r = 0
     (0..10).each do |j|
@@ -36,4 +36,5 @@ class CachingController < ApplicationController
   end
 
   add_method_tracer :sin, 'Custom/compute_sine'
+  add_method_tracer :factorial, 'Custom/compute_factorial'
 end
