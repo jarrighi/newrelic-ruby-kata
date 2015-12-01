@@ -36,4 +36,5 @@ class CachingController < ApplicationController
   end
 
   add_method_tracer :sin, 'Custom/compute_sine'
+  add_method_tracer :factorial, 'Custom/compute_factorial'
 end
